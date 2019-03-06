@@ -296,7 +296,7 @@ def reconstruct(x, grid, data, basis):
     """
     interpolant = np.zeros(len(x))
     for i in range(len(x)) :
-        interpolant[i] = basis(x[i],grid).T @ data
+        interpolant[i] = np.matmul(basis(x[i],grid).T,data)
 
     return interpolant
 
