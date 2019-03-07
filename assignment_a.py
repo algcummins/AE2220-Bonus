@@ -107,7 +107,7 @@ def newton_method(f, dfdx, x_0, iter_max=100, min_error=1e-14):
     x = x_0
     x_history = [x]
     error = abs(f(x))
-    while (i < iter_max or error > min_error):
+    while (i < iter_max and error > min_error):
         x = x - f(x)/dfdx(x)
         x_history.append(x)
         error = abs(f(x))
